@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawnerBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private EnemyBehaviour _enemy;
+    private EnemyMovementBehaviour _enemy;
     [SerializeField]
     private Transform _enemyTarget;
 
@@ -19,7 +19,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
     {
         if (_timer >= _spawnTime)
         {
-            EnemyBehaviour spawnedEnemy = Instantiate(_enemy, transform.position, transform.rotation);
+            EnemyMovementBehaviour spawnedEnemy = Instantiate(_enemy, transform.position, transform.rotation);
             spawnedEnemy.Target = _enemyTarget;
             _timer = 0.0f;
         }

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MovementBehaviour
+public class EnemyMovementBehaviour : MovementBehaviour
 {
     [SerializeField]//Called atrbute lets unity see this
     private Transform _target;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private float _damage;
 
     public float Speed
     {
@@ -35,9 +37,9 @@ public class EnemyBehaviour : MovementBehaviour
         if(other.transform == _target)
         {
             //gets goal behaior
-            GoalBehaviour goal = other.GetComponent<GoalBehaviour>();
-            if(goal)
-                goal.EnemyCount++;//If gola add to enemy count
+            GoalBehaviour goalHealth = other.GetComponent<GoalBehaviour>();
+            if(goalHealth)
+                goalHealth.TakeDamage(_damage);//If gola add to enemy count
             //Destroy this enemy
             Destroy(gameObject);
         }
@@ -47,12 +49,4 @@ public class EnemyBehaviour : MovementBehaviour
     {
         Destroy(gameObject);
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.transform == _target)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
 }
