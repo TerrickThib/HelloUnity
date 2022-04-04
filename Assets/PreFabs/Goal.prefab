@@ -108,5 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143623719448c554e9b106168421349d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FailureMaterial: {fileID: 0}
   _health: 10
+  _isAlive: 0
+  _destroyOnDeath: 0
+  FailureMaterial: {fileID: 2100000, guid: 61d07e4526f648c46a62a9b1b579ffa3, type: 2}
