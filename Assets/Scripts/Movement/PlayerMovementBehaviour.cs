@@ -12,6 +12,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private Camera _camera;
     [SerializeField]
     private float _rotationSpeedY;
+    [SerializeField]
+    private float _rotationSpeedX;
 
     public Vector3 MoveDirection
     { 
